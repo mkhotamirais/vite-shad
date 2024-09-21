@@ -5,7 +5,7 @@ import MobileNav from "./MobileNav";
 
 export default function Header() {
   return (
-    <header className="border-b">
+    <header className="z-50 backdrop-blur bg-white/50 dark:bg-black/50 border-b sticky top-0">
       <div className="container">
         <div className="h-16 flex items-center justify-between">
           <div className="flex gap-3 items-center">

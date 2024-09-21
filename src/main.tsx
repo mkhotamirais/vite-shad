@@ -4,8 +4,8 @@ import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from "react-router-dom";
 import Home from "./pages/Home.tsx";
-import UseInView from "./pages/UseInView.tsx";
 import Navbar from "./pages/navbar/Navbar.tsx";
+import UseInView from "./pages/use-in-view/UseInView.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
