@@ -10,13 +10,10 @@ import {
 import { Menu } from "lucide-react";
 import { Accordion, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Logo } from "./Header";
-import { navMenu } from "@/lib/nav-menu";
-import { Link, useLocation } from "react-router-dom";
+import { navMenu } from "@/lib/menu";
+import { Link } from "react-router-dom";
 
 export default function MobileNav() {
-  const location = useLocation();
-  console.log(location);
-
   return (
     <div className="block sm:hidden">
       <Sheet>

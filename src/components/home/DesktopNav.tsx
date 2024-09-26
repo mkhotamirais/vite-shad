@@ -1,4 +1,4 @@
-import { navMenu } from "@/lib/nav-menu";
+import { navMenu } from "@/lib/menu";
 import { Link } from "react-router-dom";
 
 export default function DesktopNav() {
