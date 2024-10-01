@@ -1,14 +1,14 @@
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { contentMenu } from "@/lib/menu";
-import { Eye } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function Home() {
   const [cari, setCari] = useState("");
   const [cat, setCat] = useState("");
+
+  const cats = Array.from(new Set(contentMenu.map((item) => item.category)));
 
   let filteredMenu = contentMenu;
   if (cari.length > 0) {
@@ -29,29 +29,32 @@ export default function Home() {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All</SelectItem>
-            <SelectItem value="tips">Tips</SelectItem>
-            <SelectItem value="components">Components</SelectItem>
-            <SelectItem value="others">Others</SelectItem>
+            {cats.map((item, i) => (
+              <SelectItem key={i} value={item} className="capitalize">
+                {item}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 py-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 py-2">
         {filteredMenu?.length > 0 &&
           filteredMenu.map((item, i) => (
-            <div key={i} className="relative group border rounded p-2">
-              <h1 className="capitalize">{item.title}</h1>
-              <p className="text-sm">{item.description}</p>
-              <p className="text-sm text-muted-foreground">#{item.category}</p>
-              <Button
-                asChild
-                size="icon"
-                className="absolute scale-0 group-hover:scale-100 right-0 top-0 m-2 transition"
-              >
-                <Link to={item.href}>
-                  <Eye className="size-4" />
+            <React.Fragment key={i}>
+              {item.category === "static web" ? (
+                <a href={item.href} className="hover:scale-105 group transition relative group border rounded p-4">
+                  <h1 className="capitalize text-primary mb-2 group-hover:underline">{item.title}</h1>
+                  <p className="text-sm">{item.description}</p>
+                  <div className="text-sm text-muted-foreground">#{item.category}</div>
+                </a>
+              ) : (
+                <Link to={item.href} className="hover:scale-105 group transition relative group border rounded p-4">
+                  <h1 className="capitalize text-primary mb-2 group-hover:underline">{item.title}</h1>
+                  <p className="text-sm">{item.description}</p>
+                  <div className="text-sm text-muted-foreground">#{item.category}</div>
                 </Link>
-              </Button>
-            </div>
+              )}
+            </React.Fragment>
           ))}
       </div>
       {filteredMenu?.length === 0 && <p className="">No data found</p>}
