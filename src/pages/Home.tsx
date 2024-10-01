@@ -39,23 +39,25 @@ export default function Home() {
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 py-2">
         {filteredMenu?.length > 0 &&
-          filteredMenu.map((item, i) => (
-            <React.Fragment key={i}>
-              {item.category === "static web" ? (
-                <a href={item.href} className="hover:scale-105 group transition relative group border rounded p-4">
-                  <h1 className="capitalize text-primary mb-2 group-hover:underline">{item.title}</h1>
-                  <p className="text-sm">{item.description}</p>
-                  <div className="text-sm text-muted-foreground">#{item.category}</div>
-                </a>
-              ) : (
-                <Link to={item.href} className="hover:scale-105 group transition relative group border rounded p-4">
-                  <h1 className="capitalize text-primary mb-2 group-hover:underline">{item.title}</h1>
-                  <p className="text-sm">{item.description}</p>
-                  <div className="text-sm text-muted-foreground">#{item.category}</div>
-                </Link>
-              )}
-            </React.Fragment>
-          ))}
+          filteredMenu
+            .sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()))
+            .map((item, i) => (
+              <React.Fragment key={i}>
+                {item.category === "static web" ? (
+                  <a href={item.href} className="hover:scale-105 group transition relative group border rounded p-4">
+                    <h1 className="capitalize text-primary mb-2 group-hover:underline">{item.title}</h1>
+                    <p className="text-sm">{item.description}</p>
+                    <div className="text-sm text-muted-foreground">#{item.category}</div>
+                  </a>
+                ) : (
+                  <Link to={item.href} className="hover:scale-105 group transition relative group border rounded p-4">
+                    <h1 className="capitalize text-primary mb-2 group-hover:underline">{item.title}</h1>
+                    <p className="text-sm">{item.description}</p>
+                    <div className="text-sm text-muted-foreground">#{item.category}</div>
+                  </Link>
+                )}
+              </React.Fragment>
+            ))}
       </div>
       {filteredMenu?.length === 0 && <p className="">No data found</p>}
     </div>
