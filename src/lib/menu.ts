@@ -23,6 +23,13 @@ export const contentMenu = [
   { category: "framer", title: "float nav 3", description: "Description float nav 3", href: "/float-nav-3" },
   { category: "framer", title: "parallax", description: "Description parallax", href: "/parallax" },
   { category: "framer", title: "progress bar 1", description: "Description progress bar 1", href: "/progress-bar-1" },
+  // react
+  { category: "react", title: "memo", description: "Description memo", href: "/memo" },
+  { category: "react", title: "use callback", description: "Description use callback", href: "/use-callback" },
+  { category: "react", title: "use context", description: "Description use context", href: "/use-context" },
+  { category: "react", title: "use memo", description: "Description use memo", href: "/use-memo" },
+  { category: "react", title: "use reducer", description: "Description use reducer", href: "/use-reducer" },
+  { category: "react", title: "use ref", description: "Description use ref", href: "/use-ref" },
   // others
   { category: "others", title: "callendar", description: "Description callendar", href: "/callendar" },
   { category: "others", title: "flip text", description: "Description flip text", href: "/flip-text" },
@@ -31,6 +38,7 @@ export const contentMenu = [
   { category: "others", title: "css background", description: "Description css background", href: "/css-background" },
   { category: "others", title: "landing1", description: "Description landing 1", href: "/landing-1" },
   { category: "others", title: "landing2", description: "Description landing 2", href: "/landing-2" },
+  { category: "others", title: "typescript", description: "Description typescript", href: "/typescript" },
   // static web
   {
     category: "static web",

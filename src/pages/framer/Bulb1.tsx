@@ -21,7 +21,7 @@ export default function Bulb1() {
   };
 
   return (
-    <div>
+    <div className="min-h-[200vh]">
       <motion.div
         animate={{ rotate: rotation }}
         transition={{ duration: 0.3 }}

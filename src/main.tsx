@@ -31,6 +31,13 @@ import FloatNav2 from "./pages/framer/FloatNav2.tsx";
 import Parallax from "./pages/framer/Parallax.tsx";
 import ProgressBar1 from "./pages/framer/ProgressBar1.tsx";
 import FloatNav3 from "./pages/framer/FloatNav3.tsx";
+import Typescript from "./pages/others/typescript/Typescript.tsx";
+import Memo from "./pages/react/Memo.tsx";
+import UseCallback from "./pages/react/UseCallback.tsx";
+import UseContext from "./pages/react/UseContext.tsx";
+import UseMemo from "./pages/react/UseMemo.tsx";
+import UseReducer from "./pages/react/UseReducer.tsx";
+import UseRef from "./pages/react/UseRef.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -60,6 +67,13 @@ const router = createBrowserRouter(
       <Route path="float-nav-3" element={<FloatNav3 />} />
       <Route path="parallax" element={<Parallax />} />
       <Route path="progress-bar-1" element={<ProgressBar1 />} />
+      {/* react */}
+      <Route path="memo" element={<Memo />} />
+      <Route path="use-callback" element={<UseCallback />} />
+      <Route path="use-context" element={<UseContext />} />
+      <Route path="use-memo" element={<UseMemo />} />
+      <Route path="use-reducer" element={<UseReducer />} />
+      <Route path="use-ref" element={<UseRef />} />
       {/* others */}
       <Route path="callendar" element={<Callendar />} />
       <Route path="flip-text" element={<FlipText />} />
@@ -68,6 +82,7 @@ const router = createBrowserRouter(
       <Route path="css-background" element={<CssBackground />} />
       <Route path="landing-1" element={<Landing1 />} />
       <Route path="landing-2" element={<Landing2 />} />
+      <Route path="typescript" element={<Typescript />} />
     </Route>
   )
 );
